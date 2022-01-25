@@ -68,8 +68,8 @@
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
 -- TODO!
-DROP TABLE movies;
-DROP TABLE top cast;
+DROP TABLE IF EXISTS movies;
+DROP TABLE IF EXISTS top_cast;
 
 -- Create new tables, according to your domain model
 -- TODO!
@@ -81,7 +81,7 @@ CREATE TABLE movies (
   director TEXT,
 );
 
-CREATE TABLE top cast (
+CREATE TABLE top_cast (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   movie_title TEXT,
   real_name TEXT,
@@ -91,7 +91,7 @@ CREATE TABLE top cast (
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
-INSERT INTO Movies (
+INSERT INTO movies (
     movie_title,
     year_released,
     mpaa_rating,
@@ -102,7 +102,7 @@ INSERT INTO Movies (
     "PG-13",
     "Christopher Nolan"
 );
-INSERT INTO Movies (
+INSERT INTO movies (
     movie_title,
     year_released,
     mpaa_rating,
@@ -113,7 +113,7 @@ INSERT INTO Movies (
     "PG-13",
     "Christopher Nolan"
 );
-INSERT INTO Movies (
+INSERT INTO movies (
     movie_title,
     year_released,
     mpaa_rating,
@@ -124,7 +124,7 @@ INSERT INTO Movies (
     "PG-13",
     "Christopher Nolan"
 );
-INSERT INTO Top Cast (
+INSERT INTO top_cast (
     movie_title,
     real_name,
     character_name
@@ -133,7 +133,7 @@ INSERT INTO Top Cast (
     "Christian Bale",
     "Bruce Wayne"
 );
-INSERT INTO Top Cast (
+INSERT INTO top_cast (
     movie_title,
     real_name,
     character_name
@@ -142,7 +142,7 @@ INSERT INTO Top Cast (
     "Micahel Caine",
     "Alfred"
 );
-INSERT INTO Top Cast (
+INSERT INTO top_cast (
     movie_title,
     real_name,
     character_name
@@ -151,7 +151,7 @@ INSERT INTO Top Cast (
     "Liam Neeson",
     "Ra's Al Ghul"
 );
-INSERT INTO Top Cast (
+INSERT INTO top_cast (
     movie_title,
     real_name,
     character_name
@@ -160,7 +160,7 @@ INSERT INTO Top Cast (
     "Katie Holmes",
     "Rachel Dawes"
 );
-INSERT INTO Top Cast (
+INSERT INTO top_cast (
     movie_title,
     real_name,
     character_name
@@ -169,7 +169,7 @@ INSERT INTO Top Cast (
     "Gary Oldman",
     "Commissioner Gordon"
 );
-INSERT INTO Top Cast (
+INSERT INTO top_cast (
     movie_title,
     real_name,
     character_name
@@ -178,7 +178,7 @@ INSERT INTO Top Cast (
     "Christian Bale",
     "Bruce Wayne"
 );
-INSERT INTO Top Cast (
+INSERT INTO top_cast (
     movie_title,
     real_name,
     character_name
@@ -187,7 +187,7 @@ INSERT INTO Top Cast (
     "Heath Ledger",
     "Joker"
 );
-INSERT INTO Top Cast (
+INSERT INTO top_cast (
     movie_title,
     real_name,
     character_name
@@ -196,7 +196,7 @@ INSERT INTO Top Cast (
     "Aaron Eckhart",
     "Harvey Dent"
 );
-INSERT INTO Top Cast (
+INSERT INTO top_cast (
     movie_title,
     real_name,
     character_name
@@ -205,7 +205,7 @@ INSERT INTO Top Cast (
     "Michael Caine",
     "Alfred"
 );
-INSERT INTO Top Cast (
+INSERT INTO top_cast (
     movie_title,
     real_name,
     character_name
@@ -214,7 +214,7 @@ INSERT INTO Top Cast (
     "Maggie Gyllenhaal",
     "Rachel Dawes"
 );
-INSERT INTO Top Cast (
+INSERT INTO top_cast (
     movie_title,
     real_name,
     character_name
@@ -223,7 +223,7 @@ INSERT INTO Top Cast (
     "Christian Bale",
     "Bruce Wayne"
 );
-INSERT INTO Top Cast (
+INSERT INTO top_cast (
     movie_title,
     real_name,
     character_name
@@ -232,7 +232,7 @@ INSERT INTO Top Cast (
     "Gary Oldman",
     "Commissioner Gordon"
 );
-INSERT INTO Top Cast (
+INSERT INTO top_cast (
     movie_title,
     real_name,
     character_name
@@ -241,7 +241,7 @@ INSERT INTO Top Cast (
     "Tom Hardy",
     "Bane"
 );
-INSERT INTO Top Cast (
+INSERT INTO top_cast (
     movie_title,
     real_name,
     character_name
@@ -250,7 +250,7 @@ INSERT INTO Top Cast (
     "Joseph Gordon-Levitt",
     "John Blake"
 );
-INSERT INTO Top Cast (
+INSERT INTO top_cast (
     movie_title,
     real_name,
     character_name
