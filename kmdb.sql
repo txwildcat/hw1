@@ -78,14 +78,14 @@ CREATE TABLE movies (
   movie_title TEXT,
   year_released TEXT,
   mpaa_rating TEXT,
-  director TEXT,
+  director TEXT
 );
 
 CREATE TABLE top_cast (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   movie_title TEXT,
   real_name TEXT,
-  character_name TEXT,
+  character_name TEXT
 );
 
 -- Insert data into your database that reflects the sample data shown above
@@ -268,8 +268,9 @@ INSERT INTO top_cast (
 -- The SQL statement for the movies output
 -- TODO!
 SELECT movie_title, year_released, mpaa_rating, director
-FROM Movies,
-GROUP BY year_released;
+FROM movies
+ORDER BY year_released
+;
 
 -- Prints a header for the cast output
 .print ""
@@ -281,5 +282,6 @@ GROUP BY year_released;
 -- The SQL statement for the cast output
 -- TODO!
 SELECT movie_title, real_name, character_name
-FROM Top Cast,
-GROUP BY movie_title;
+FROM top_cast
+ORDER BY movie_title
+;
