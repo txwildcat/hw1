@@ -68,12 +68,12 @@
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
 -- TODO!
-DROP TABLE IF EXISTS Movies;
-DROP TABLE IF EXISTS Top Cast;
+DROP TABLE movies;
+DROP TABLE top cast;
 
 -- Create new tables, according to your domain model
 -- TODO!
-CREATE TABLE Movies (
+CREATE TABLE movies (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   movie_title TEXT,
   year_released TEXT,
@@ -81,7 +81,7 @@ CREATE TABLE Movies (
   director TEXT,
 );
 
-CREATE TABLE Top Cast (
+CREATE TABLE top cast (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   movie_title TEXT,
   real_name TEXT,
@@ -91,6 +91,174 @@ CREATE TABLE Top Cast (
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
+INSERT INTO Movies (
+    movie_title,
+    year_released,
+    mpaa_rating,
+    director
+) VALUES (
+    "Batman Begins",
+    "2005",
+    "PG-13",
+    "Christopher Nolan"
+);
+INSERT INTO Movies (
+    movie_title,
+    year_released,
+    mpaa_rating,
+    director
+) VALUES (
+    "The Dark Knight",
+    "2008",
+    "PG-13",
+    "Christopher Nolan"
+);
+INSERT INTO Movies (
+    movie_title,
+    year_released,
+    mpaa_rating,
+    director
+) VALUES (
+    "The Dark Knight Rises",
+    "2012",
+    "PG-13",
+    "Christopher Nolan"
+);
+INSERT INTO Top Cast (
+    movie_title,
+    real_name,
+    character_name
+) VALUES (
+    "Batman Begins",
+    "Christian Bale",
+    "Bruce Wayne"
+);
+INSERT INTO Top Cast (
+    movie_title,
+    real_name,
+    character_name
+) VALUES (
+    "Batman Begins",
+    "Micahel Caine",
+    "Alfred"
+);
+INSERT INTO Top Cast (
+    movie_title,
+    real_name,
+    character_name
+) VALUES (
+    "Batman Begins",
+    "Liam Neeson",
+    "Ra's Al Ghul"
+);
+INSERT INTO Top Cast (
+    movie_title,
+    real_name,
+    character_name
+) VALUES (
+    "Batman Begins",
+    "Katie Holmes",
+    "Rachel Dawes"
+);
+INSERT INTO Top Cast (
+    movie_title,
+    real_name,
+    character_name
+) VALUES (
+    "Batman Begins",
+    "Gary Oldman",
+    "Commissioner Gordon"
+);
+INSERT INTO Top Cast (
+    movie_title,
+    real_name,
+    character_name
+) VALUES (
+    "The Dark Knight",
+    "Christian Bale",
+    "Bruce Wayne"
+);
+INSERT INTO Top Cast (
+    movie_title,
+    real_name,
+    character_name
+) VALUES (
+    "The Dark Knight",
+    "Heath Ledger",
+    "Joker"
+);
+INSERT INTO Top Cast (
+    movie_title,
+    real_name,
+    character_name
+) VALUES (
+    "The Dark Knight",
+    "Aaron Eckhart",
+    "Harvey Dent"
+);
+INSERT INTO Top Cast (
+    movie_title,
+    real_name,
+    character_name
+) VALUES (
+    "The Dark Knight",
+    "Michael Caine",
+    "Alfred"
+);
+INSERT INTO Top Cast (
+    movie_title,
+    real_name,
+    character_name
+) VALUES (
+    "The Dark Knight",
+    "Maggie Gyllenhaal",
+    "Rachel Dawes"
+);
+INSERT INTO Top Cast (
+    movie_title,
+    real_name,
+    character_name
+) VALUES (
+    "The Dark Knight Rises",
+    "Christian Bale",
+    "Bruce Wayne"
+);
+INSERT INTO Top Cast (
+    movie_title,
+    real_name,
+    character_name
+) VALUES (
+    "The Dark Knight Rises",
+    "Gary Oldman",
+    "Commissioner Gordon"
+);
+INSERT INTO Top Cast (
+    movie_title,
+    real_name,
+    character_name
+) VALUES (
+    "The Dark Knight Rises",
+    "Tom Hardy",
+    "Bane"
+);
+INSERT INTO Top Cast (
+    movie_title,
+    real_name,
+    character_name
+) VALUES (
+    "The Dark Knight Rises",
+    "Joseph Gordon-Levitt",
+    "John Blake"
+);
+INSERT INTO Top Cast (
+    movie_title,
+    real_name,
+    character_name
+) VALUES (
+    "The Dark Knight Rises",
+    "Anne Hathaway",
+    "Selina Kyle"
+);
 
 -- Prints a header for the movies output
 .print "Movies"
@@ -99,6 +267,9 @@ CREATE TABLE Top Cast (
 
 -- The SQL statement for the movies output
 -- TODO!
+SELECT movie_title, year_released, mpaa_rating, director
+FROM Movies,
+GROUP BY year_released;
 
 -- Prints a header for the cast output
 .print ""
@@ -109,3 +280,6 @@ CREATE TABLE Top Cast (
 
 -- The SQL statement for the cast output
 -- TODO!
+SELECT movie_title, real_name, character_name
+FROM Top Cast,
+GROUP BY movie_title;
